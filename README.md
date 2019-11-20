@@ -1,3 +1,5 @@
+![Travis (.org)](https://img.shields.io/travis/tomaszwpasternak/ng2-iban)
+
 # ng2-iban
 
 Angular 2+ module for IBAN (International bank account number) operations
