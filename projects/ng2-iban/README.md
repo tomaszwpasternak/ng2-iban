@@ -45,7 +45,7 @@ Module provide:
 
 You can use pipe to convert `iban` into `electonic` format:
 ``` html
-{{ 'SE3550000000054910000003' | convertIban }} // SE35 5000 0000 0549 1000 0003
+{{ 'SE3550000000054910000003' | ibanConverter }} // SE35 5000 0000 0549 1000 0003
 ```
 
 #### Pipe default options
@@ -58,7 +58,7 @@ You can use pipe to convert `iban` into `electonic` format:
 ```
 To override options pass it to pipe:
 ``` html
-{{ 'SE3550000000054910000003' | convertIban:options }} // 35-5000-0000-0549-1000-0003
+{{ 'SE3550000000054910000003' | ibanConverter:options }} // 35-5000-0000-0549-1000-0003
 ```
 
 #### Pipe in components/services
@@ -68,7 +68,10 @@ You can inject pipe to angular 2+ component:
 
 @Component({
   selector:    'app-your-component',
-  templateUrl: './your-component.component.html'
+  templateUrl: './your-component.component.html',
+  providers: [
+    Ng2IbanPipe
+  ]
 })
 export class YourComponent {
   private options = { 
@@ -76,7 +79,7 @@ export class YourComponent {
   };
   
   constructor(private ng2IbanPipe: Ng2IbanPipe) {
-    ng2IbanPipe.transform('SE3550000000054910000003', options);  // You can pass options as second parameter
+    ng2IbanPipe.transform('SE3550000000054910000003', this.options);  // You can pass options as second parameter
   }
 }
 
@@ -114,15 +117,16 @@ Angular 2+ form validators for IBAN.
 
 ``` typescript
 const formGroup = formBuilder.group({
-    ibanWithLocale: new FormControl('SE3550000000054910000003', {
+  ibanWithLocale: new FormControl('SE3550000000054910000003', {
     validators: [
-       Ng2IbanValidator.ValidatorIBAN
-     ]
-  },
+      Ng2IbanValidator.ValidatorIBAN
+    ]
+  })
+  ,
   ibanWithoutLocale: new FormControl('3550000000054910000003', {
     validators: [
-       Ng2IbanValidator.ValidatorIBANWithLocale('SE')
-     ]
+      Ng2IbanValidator.ValidatorIBANWithLocale('SE')
+    ]
   })
 });
 ```
