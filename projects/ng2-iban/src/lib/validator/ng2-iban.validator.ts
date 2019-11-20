@@ -14,12 +14,13 @@ export class Ng2IbanValidator {
   }
 
   static ValidatorIBANWithLocale(locale: string): ValidatorFn {
-    return (ibanControl: AbstractControl): { [key: string]: any } | null => {
+    const validationFunction = (ibanControl: AbstractControl): { [key: string]: any } | null => {
       if (!ibanControl || !ibanControl.value || !locale) {
         return {incorrectIban: true};
       }
       return IBAN.isValid(locale + ibanControl.value) ? null : {incorrectIban: true};
     };
+    return validationFunction;
   }
 }
 
