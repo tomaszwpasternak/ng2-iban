@@ -1,3 +1,5 @@
+![Travis (.org)](https://img.shields.io/travis/tomaszwpasternak/ng2-iban)
+[![Coverage Status](https://coveralls.io/repos/github/tomaszwpasternak/ng2-iban/badge.svg?branch=master)](https://coveralls.io/github/tomaszwpasternak/ng2-iban?branch=master)
 # ng2-iban
 
 Angular 2+ module for IBAN (International bank account number) operations
