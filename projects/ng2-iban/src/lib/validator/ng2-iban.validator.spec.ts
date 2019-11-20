@@ -19,8 +19,6 @@ describe('Angular2IbanPrividerValidator', () => {
       })
     });
 
-    console.log(formGroup.valid);
-
     expect(formGroup.valid).toEqual(false);
   });
 
@@ -32,8 +30,6 @@ describe('Angular2IbanPrividerValidator', () => {
         ]
       })
     });
-
-    console.log(formGroup.valid);
 
     expect(formGroup.valid).toEqual(false);
   });
