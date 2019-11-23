@@ -11,12 +11,12 @@ Angular 2+ module for IBAN (International bank account number) operations
     - [Installation](#installation)
     - [Usage](#usage)
        - [Pipe](#pipe)
-         - [Pipe default options](#Pipe default options)
-         - [Pipe in components/services](#Pipe in components/services)
+         - [Pipe default options](#pipe-default-options)
+         - [Pipe in components/services](#pipe-in-components/services)
        - [Service](#service)
        - [Validator](#validator)
-         - [Template driven](#Template driven)
-         - [Reactive forms](#Reactive forms)
+         - [Template driven](#template-driven)
+         - [Reactive forms](#reactive-forms)
     - [License](#license)
 
 ## Installation
