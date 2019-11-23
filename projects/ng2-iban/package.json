@@ -1,6 +1,6 @@
 {
   "name": "ng2-iban",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular 2+ module for IBAN (International bank account number) operations",
   "author": "tomaszwpasternak",
   "repository": {

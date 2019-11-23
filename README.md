@@ -12,7 +12,7 @@ Angular 2+ module for IBAN (International bank account number) operations
     - [Usage](#usage)
        - [Pipe](#pipe)
          - [Pipe default options](#pipe-default-options)
-         - [Pipe in components/services](#pipe-in-components/services)
+         - [Pipe in components and services](#pipe-in-components-and-services)
        - [Service](#service)
        - [Validator](#validator)
          - [Template driven](#template-driven)
@@ -66,7 +66,7 @@ To override options pass it to pipe:
 {{ 'SE3550000000054910000003' | ibanConverter:options }} // 35-5000-0000-0549-1000-0003
 ```
 
-#### Pipe in components/services
+#### Pipe in components and services
 
 You can inject pipe to angular 2+ component:
 ``` typescript
