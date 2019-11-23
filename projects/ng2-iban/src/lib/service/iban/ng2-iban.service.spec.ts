@@ -1,6 +1,6 @@
 import {Ng2IbanService} from './ng2-iban.service';
 
-describe('Angular2IbanPrividerService', () => {
+describe('Ng2IbanService', () => {
   const VALID_IBAN = 'SE3550000000054910000003';
   const VALID_BBAN = '500 0000005491000000 3';
   const VALID_IBAN_ELECTRONIC = 'SE35 5000 0000 0549 1000 0003';

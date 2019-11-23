@@ -2,7 +2,7 @@ import {Ng2IbanPipe} from './ng2-iban.pipe';
 import {Ng2IbanOptionInterface} from './ng2-iban-option.interface';
 
 
-describe('Angular2IbanPrividerPipe', () => {
+describe('Ng2IbanPipe', () => {
   const VALID_IBAN = 'SE3550000000054910000003';
   const VALID_IBAN_ELECTRONIC = 'SE35 5000 0000 0549 1000 0003';
 

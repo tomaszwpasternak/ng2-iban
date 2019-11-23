@@ -1,7 +1,7 @@
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl} from '@angular/forms';
 import {Ng2IbanValidator} from './ng2-iban.validator';
 
-describe('Angular2IbanPrividerValidator', () => {
+describe('Ng2IbanValidator', () => {
   const VALID_IBAN = 'SE3550000000054910000003';
   const formBuilder = new FormBuilder();
 

@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "lib",
+      "ng2Iban",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "lib",
+      "ng2-iban",
       "kebab-case"
     ]
   }

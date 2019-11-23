@@ -1,13 +1,13 @@
 {
   "name": "ng2-iban",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "ng test --code-coverage",
+    "copy-license": "copy .\\LICENSE .\\dist\\ng2-iban",
+    "copy-readme": "copy .\\README.md .\\dist\\ng2-iban",
+    "copy-files": "npm run copy-license && npm run copy-readme",
+    "build": "ng test --watch=false --code-coverage && ng build && npm run copy-files"
   },
   "dependencies": {
     "@angular/animations": "~8.2.9",

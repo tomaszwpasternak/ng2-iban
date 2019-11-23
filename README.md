@@ -1,8 +1,9 @@
+# ng2-iban
+
 ![Travis (.org)](https://img.shields.io/travis/tomaszwpasternak/ng2-iban)
 [![Coverage Status](https://coveralls.io/repos/github/tomaszwpasternak/ng2-iban/badge.svg?branch=master)](https://coveralls.io/github/tomaszwpasternak/ng2-iban?branch=master)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/tomaszwpasternak/ng2-iban)
 ![NPM](https://img.shields.io/npm/l/ng2-iban)
-# ng2-iban
 
 Angular 2+ module for IBAN (International bank account number) operations
 
@@ -10,8 +11,12 @@ Angular 2+ module for IBAN (International bank account number) operations
     - [Installation](#installation)
     - [Usage](#usage)
        - [Pipe](#pipe)
+         - [Pipe default options](#Pipe default options)
+         - [Pipe in components/services](#Pipe in components/services)
        - [Service](#service)
        - [Validator](#validator)
+         - [Template driven](#Template driven)
+         - [Reactive forms](#Reactive forms)
     - [License](#license)
 
 ## Installation
@@ -89,14 +94,6 @@ export class YourComponent {
 
 Angular 2+ service provide methods that you can do with iban. 
 
-| Method | Response | Description |
-| --- | --- | --- |
-| `onCheckIban(iban: string, locale?: string)`  | boolean | Validate iban |
-| `onConvertToBban(iban: string, separator: string)` | string | Convert iban to bban or throw when iban is incorrect |
-| `onConvertFromBban(locale: string, bban: string)` | string | Convert bban to iban |
-| `onFormatIban(iban: string, separator: string)` | string | Format iban |
-
-You can inject service to component:
 ``` typescript
 
 @Component({
@@ -108,12 +105,63 @@ export class YourComponent {
     ng2IbanService.onCheckIban('3550000000054910000003', 'SE');
   }
 }
-
 ```
+
+Service API
+
+| Method | Response | Description |
+| --- | --- | --- |
+| `onCheckIban(iban: string, locale?: string)`  | boolean | Validate iban |
+| `onConvertToBban(iban: string, separator: string)` | string | Convert iban to bban or throw when iban is incorrect |
+| `onConvertFromBban(locale: string, bban: string)` | string | Convert bban to iban |
+| `onFormatIban(iban: string, separator: string)` | string | Format iban |
+
 
 ### Validator
 
-Angular 2+ form validators for IBAN.
+At the first you must inject module `FormsModule`
+``` typescript
+@NgModule({
+  //...
+  imports: [
+    //...
+    FormsModule
+  ]
+  //...
+})
+export class YourModule { }
+
+```
+
+#### Template driven
+
+You can use directive for template driven 
+
+``` typescript
+@Component({
+    template: `<input type="text" ng2IbanValidation [(ngModel)]="iban">`,
+    providers: [Ng2IbanDirective]
+})
+export class Component {
+    public iban: string;
+}
+```
+
+If you want to validate without locale:
+
+``` typescript
+@Component({
+    template: `<input type="text" ng2IbanValidation ng2IbanLocale="SE" [(ngModel)]="iban">`,
+    providers: [Ng2IbanDirective]
+})
+export class Component {
+    public iban: string;
+}
+```
+
+#### Reactive forms
+
+Reactive forms validation
 
 ``` typescript
 const formGroup = formBuilder.group({
@@ -121,8 +169,7 @@ const formGroup = formBuilder.group({
     validators: [
       Ng2IbanValidator.ValidatorIBAN
     ]
-  })
-  ,
+  }),
   ibanWithoutLocale: new FormControl('3550000000054910000003', {
     validators: [
       Ng2IbanValidator.ValidatorIBANWithLocale('SE')
@@ -133,4 +180,4 @@ const formGroup = formBuilder.group({
 
 ## License
 
-MIT
+[The MIT License](https://github.com/tomaszwpasternak/ng2-iban/blob/master/LICENSE)
