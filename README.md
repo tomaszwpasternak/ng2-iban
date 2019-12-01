@@ -20,7 +20,7 @@ Angular 2+ module for IBAN (International bank account number) operations
            - [Reactive forms](#reactive-forms)
        - [Bank account operations](#bank-account-operations)
          - [Module options](#module-options)
-         - [bank information file](#bank-information-file)
+         - [Bank information file](#bank-information-file)
          - [Bank information service](#bank-information-service)
          - [Bank information pipe](#bank-information-pipe)
     - [License](#license)
@@ -192,7 +192,7 @@ const formGroup = formBuilder.group({
 
 ### Bank account operations
 
-This part of package focus on converting 
+This part of package focus on converting **iban** into **list of information** that you provide as json. 
 
 #### Module options
 
@@ -215,7 +215,7 @@ export class YourModule {
 
 #### Bank information file
 
-You need to create json file *(assets/ng2-bank-information.json)*. Example:
+You need to create json file *(default: assets/ng2-bank-information.json)*. Example:
 
 ``` json
 [
