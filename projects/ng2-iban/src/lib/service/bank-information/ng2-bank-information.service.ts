@@ -65,7 +65,8 @@ export class Ng2BankInformationService implements OnDestroy {
     let matchingBankLocales = [];
     matchingBankInformations.forEach(matchingBankInformation => {
       matchingBankLocales = matchingBankInformation.codes.filter(el => {
-        return el.code === iban.substring(4, 8);
+        if (el.code.length === 0) { return false; }
+        return el.code === iban.substring(4, 4 + el.code.length);
       });
     });
 
