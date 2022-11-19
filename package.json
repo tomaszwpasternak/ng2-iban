@@ -24,7 +24,7 @@
     "iban": "0.0.12"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.19",
+    "@angular-devkit/build-angular": "~15.0.0",
     "@angular-devkit/build-ng-packagr": "~0.803.19",
     "@angular/cli": "~8.3.9",
     "@angular/compiler-cli": "~8.2.9",
